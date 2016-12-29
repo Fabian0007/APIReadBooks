@@ -5,7 +5,7 @@ var express         = require("express"),
     mongoose        = require('mongoose');
 
 // Connection to DB
-mongoose.connect('mongodb://localhost/tvshows', function(err, res) {
+mongoose.connect('mongodb://localhost/readbooks', function(err, res) {
   if(err) throw err;
   console.log('Connected to Database');
 });
@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 // Import Models and controllers
-var models     = require('./models/tvshow')(app, mongoose);
-var TVShowCtrl = require('./controllers/tvshows');
+var models     = require('./models/readbook')(app, mongoose);
+var bookCtrl = require('./controllers/readbooks');
 
 // Example Route
 var router = express.Router();
@@ -27,18 +27,18 @@ router.get('/', function(req, res) {
 app.use(router);
 
 // API routes
-var tvshows = express.Router();
+var books = express.Router();
 
-tvshows.route('/tvshows')
-  .get(TVShowCtrl.findAllTVShows)
-  .post(TVShowCtrl.addTVShow);
+books.route('/books')
+  .get(bookCtrl.findAllBooks)
+  .post(bookCtrl.addBook);
 
-tvshows.route('/tvshows/:id')
-  .get(TVShowCtrl.findById)
-  .put(TVShowCtrl.updateTVShow)
-  .delete(TVShowCtrl.deleteTVShow);
+books.route('/books/:id')
+  .get(bookCtrl.findById)
+  .put(bookCtrl.updateBook)
+  .delete(bookCtrl.deleteBook);
 
-app.use('/api', tvshows);
+app.use('/api', books);
 
 // Start server
 app.listen(process.env.PORT, function() {
