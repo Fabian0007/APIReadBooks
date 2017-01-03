@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 var bookSchema = new Schema({  
   title:    { type: String },
   year:     { type: Number },
-  authors:  { type : [String] },
+  authors: { type: Schema.ObjectId, ref: "Authors" },
   description:  { type: String },
   review:  { type: String },
   poster:   { type: String },
