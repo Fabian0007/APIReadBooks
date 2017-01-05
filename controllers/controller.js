@@ -108,10 +108,11 @@ exports.addAuthor = function(req, res) {
 		birthdate:  req.body.birthdate,
 		nationality:  req.body.nationality,
 	});
+	console.log(author);
 
 	author.save(function(err, author) {
-		if(err) return res.send(500, err.message);
-    res.status(200).jsonp(author);
+		if(err) return res.sendStatus(500, err.message);
+    res.sendStatus(200);
 	});
 };
 
