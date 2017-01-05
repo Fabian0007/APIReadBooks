@@ -4,6 +4,9 @@
 /dist
 /tmp
 
+# dependencies
+/node_modules
+
 # BD
 /data
 
