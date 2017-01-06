@@ -1,6 +1,9 @@
 {
   "name": "node-api-rest-example",
   "version": "2.0.0",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "body-parser": "^1.5.1",
     "cors": "^2.1.6",
