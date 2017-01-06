@@ -51,7 +51,7 @@ books.route('/books/:id')
   .put(controller.updateBook)
   .delete(controller.deleteBook);
 
-app.use('/api', books);
+app.use('', books);
 
 var authors = express.Router();
 
@@ -64,7 +64,7 @@ authors.route('/authors/:id')
   .put(controller.updateAuthor)
   .delete(controller.deleteAuthor);
 
-app.use('/api', authors);
+app.use('', authors);
 
 // Start server
 app.listen(process.env.PORT, function() {
