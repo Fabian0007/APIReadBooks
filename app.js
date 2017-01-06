@@ -35,7 +35,7 @@ var controller = require('./controllers/controller');
 // Example Route
 var router = express.Router();
 router.get('/', function(req, res) {
-  res.send("Hello world!");
+  res.send("API REST ReadBooks, Use /authors or /books");
 });
 app.use(router);
 
