@@ -1,18 +1,20 @@
 #API REST using NodeJS
-
+=============
 ##Instalation
 
-sudo apt-get install -y mongodb-org
+###If you use mongo locally
+###Uncomment this line:
+###//var mongodbUri = 'mongodb://localhost/bdbooks';
 
-npm install
+###Comment this:
+###var mongodbUri = 'mongodb://fabian0007:fabian0007@ds157268.mlab.com:57268/bdbooks';
 
-npm install cors
+####sudo apt-get install -y mongodb-org
+####mkdir data
+####./mongod
 
-npm install mongodb
+###If you use mLab
 
-mkdir data
-
-./mongod
-
-node app.js
+####npm install
+####node app.js
 

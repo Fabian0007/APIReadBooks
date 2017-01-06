@@ -6,9 +6,17 @@ var express         = require("express"),
     cors = require('cors');
 
 // Connection to DB
-mongoose.connect('mongodb://localhost/bdbooks', function(err, res) {
-  if(err) throw err;
-  console.log('Connected to Database');
+var options = { server: { socketOptions: { keepAlive: 300000, connectTimeoutMS: 30000 } }, 
+                replset: { socketOptions: { keepAlive: 300000, connectTimeoutMS : 30000 } } };
+                
+var mongodbUri = 'mongodb://fabian0007:fabian0007@ds157268.mlab.com:57268/bdbooks';
+//var mongodbUri = 'mongodb://localhost/bdbooks';
+mongoose.connect(mongodbUri, options);
+var conn = mongoose.connection; 
+conn.on('error', console.error.bind(console, 'connection error:'));  
+ 
+conn.once('open', function() {
+  console.log("Successful connection");                         
 });
 
 // Middlewares
