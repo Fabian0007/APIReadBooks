@@ -29,3 +29,12 @@ npm install
 ```
 npm start
 ```
+## NPM scripts
+
+NPM scripts allow to run easily certain tasks.  
+To run any script, use the command `npm run script-name`.
+
+Script name | Description
+----------- | -----------
+install | Download and install the necessary packages
+start | Run the server
