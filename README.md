@@ -1,4 +1,4 @@
-#API REST using NodeJS
+#API RESTful using NodeJS
 ##Prerequisites
 ###npm >=2.15.9
 ```
