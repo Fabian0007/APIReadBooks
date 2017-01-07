@@ -1,10 +1,10 @@
 #API REST using NodeJS
 ##Prerequisites
-##npm >=2.15.9
+###npm >=2.15.9
 ```
 sudo apt-get install npm
 ```
-##nodejs >=4.6.1
+###nodejs >=4.6.1
 ```
 sudo npm cache clean -f
 sudo npm install -g n
